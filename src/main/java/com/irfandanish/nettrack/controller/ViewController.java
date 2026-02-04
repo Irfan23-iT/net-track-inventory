@@ -8,6 +8,11 @@ import com.irfandanish.nettrack.model.Asset;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import java.net.InetAddress;
+import java.io.IOException;
+
+
+
 @Controller
 public class ViewController {
 
@@ -60,4 +65,39 @@ public String showUpdateForm(@PathVariable Long id, Model model) {
     // 3. Reuse the "add-asset" page!
     return "add-asset";
 }
+
+// --- METHOD 6: Ping the Asset ---
+    @GetMapping("/ping/{id}")
+    public String pingAsset(@PathVariable Long id) {
+        // 1. Get the asset from DB
+        Asset asset = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid asset Id:" + id));
+
+        // 2. Check if it has an IP
+        if (asset.getIpAddress() == null || asset.getIpAddress().isEmpty()) {
+            return "redirect:/"; // Cannot ping nothing!
+        }
+
+        // 3. Run the Ping Logic
+        try {
+            InetAddress address = InetAddress.getByName(asset.getIpAddress());
+            
+            // Try to reach it (Timeout: 3000ms = 3 seconds)
+            boolean reachable = address.isReachable(3000);
+
+            if (reachable) {
+                asset.setStatus("Online 🟢");
+            } else {
+                asset.setStatus("Offline 🔴");
+            }
+            
+        } catch (IOException e) {
+            asset.setStatus("Error ⚠️");
+        }
+
+        // 4. Save the new status to DB
+        repository.save(asset);
+
+        return "redirect:/";
+    }
 } // End of Class

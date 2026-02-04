@@ -27,6 +27,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Serial Number</th>
+                        <th>IP Address</th>
                         <th>Type</th>
                         <th>Status</th>
                     </tr>
@@ -36,19 +37,22 @@
                         <td th:text="${asset.id}">1</td>
                         <td th:text="${asset.name}">Laptop</td>
                         <td th:text="${asset.serialNumber}">SN-123</td>
+                        <td th:text="${asset.ipAddress}">192.168.1.1</td>
                         <td th:text="${asset.type}">Device</td>
                         <td>
                             <span class="badge bg-success" th:text="${asset.status}">Active</span>
+                            <a th:href="@{/ping/{id}(id=${asset.id})}" class="btn btn-info btn-sm me-2 text-white"> Ping 📡
+                            </a>
                             <a th:href="@{/edit/{id}(id=${asset.id})}" class="btn btn-warning btn-sm me-2">
-    Edit
-</a>
+                          Edit
+                         </a>
                             <td>
-    <a th:href="@{/delete/{id}(id=${asset.id})}" 
-       class="btn btn-danger btn-sm"
-       onclick="return confirm('Are you sure you want to delete this asset?')">
-       Delete
-    </a>
-</td>
+                      <a th:href="@{/delete/{id}(id=${asset.id})}" 
+                      class="btn btn-danger btn-sm"
+                      onclick="return confirm('Are you sure you want to delete this asset?')">
+                      Delete
+                      </a>
+                     </td>
                         </td>
                     </tr>
                 </tbody>

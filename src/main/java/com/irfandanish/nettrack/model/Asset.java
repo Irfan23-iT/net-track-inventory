@@ -15,9 +15,9 @@ public class Asset {
 
     @Column(unique = true)
     private String serialNumber;
-
-    private String type; // e.g., Laptop, Router
-    private String status; // e.g., Available, Assigned
+    private String ipAddress; 
+    private String type; 
+    private String status; 
 
     // --- CONSTRUCTORS ---
     public Asset() {
@@ -70,4 +70,9 @@ public class Asset {
     public void setStatus(String status) {
         this.status = status;
     }
+    public String getIpAddress() { 
+        return ipAddress; }
+        
+    public void setIpAddress(String ipAddress) { 
+        this.ipAddress = ipAddress; }
 }

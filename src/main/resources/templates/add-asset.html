@@ -23,7 +23,10 @@
                     <label class="form-label">Serial Number</label>
                     <input type="text" class="form-control" th:field="*{serialNumber}" placeholder="e.g. SN-998877" required>
                 </div>
-
+                <div class="mb-3">
+                 <label class="form-label">IP Address (Optional)</label>
+                <input type="text" class="form-control" th:field="*{ipAddress}" placeholder="e.g. 192.168.0.1">
+                </div>
                 <div class="mb-3">
                     <label class="form-label">Type</label>
                     <select class="form-select" th:field="*{type}">
