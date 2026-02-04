@@ -38,4 +38,4 @@ Built with **Java Spring Boot** and **MySQL**, it demonstrates modern 3-Tier Arc
     * Default User: `admin` / `password123`
 
 ## 👨‍💻 Author
-**Irfan Danish** - *Aspiring Software Engineer & Network Admin*
+**Mohamad Irfan Danish Bin Azani** - *Aspiring Software Engineer & Network Admin*
