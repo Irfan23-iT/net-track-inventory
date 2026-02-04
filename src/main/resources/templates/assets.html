@@ -8,6 +8,11 @@
 
 <div class="container mt-5">
     <h1 class="text-center mb-4">🛡️ NetTrack Asset Manager</h1>
+    <div class="text-end">
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-secondary btn-sm">Sign Out</button>
+    </form>
+</div>
 <div class="text-end mb-3">
         <a href="/add" class="btn btn-primary btn-lg">
             + Add New Asset
