@@ -19,7 +19,7 @@ Built with **Java Spring Boot** and **MySQL**, it demonstrates modern 3-Tier Arc
 * **Tools:** Maven, Git, GitHub
 
 ## 📸 Screenshots
-*(Add your screenshots here! Drag and drop them into the README on GitHub later)*
+![alt text](project1net.png)
 
 ## ⚙️ How to Run
 1.  **Clone the repository:**
