@@ -1,41 +1,40 @@
-# 🛡️ NetTrack - Network Asset Management System
+# NetTrack Inventory Management System
 
-NetTrack is a Full Stack Enterprise Application designed to track IT assets (Routers, Switches, Laptops) and monitor their real-time network status.
+NetTrack is a full-stack Java web application designed for IT administrators to manage and monitor network assets. It provides a centralized dashboard to track hardware inventory and verify device connectivity in real time.
 
-Built with **Java Spring Boot** and **MySQL**, it demonstrates modern 3-Tier Architecture and network connectivity handling.
+## Project Overview
 
-## 🚀 Features
-* **Asset Inventory:** CRUD (Create, Read, Update, Delete) operations for network hardware.
-* **Real-Time Monitoring:** Integrated "Ping" functionality to check if a device is Online/Offline.
-* **Persistent Storage:** Data is stored securely in a relational MySQL database.
-* **Secure Access:** Spring Security authentication (Login/Logout protection).
-* **Responsive UI:** Dashboard built with Thymeleaf and Bootstrap 5.
+This system allows users to maintain a database of IT equipment (routers, switches, laptops, servers) and includes a network-integrated status check feature. Instead of relying purely on manual status updates, the application can execute ICMP pings against device IP addresses to verify if hardware is actively online.
 
-## 🛠️ Tech Stack
-* **Backend:** Java 17, Spring Boot 3, Spring MVC
-* **Database:** MySQL, Spring Data JPA (Hibernate)
-* **Frontend:** Thymeleaf, Bootstrap 5, HTML/CSS
-* **Security:** Spring Security (Form-based Auth)
-* **Tools:** Maven, Git, GitHub
+## Screenshot
+<img width="1915" height="717" alt="project1net" src="https://github.com/user-attachments/assets/34a56ffe-379f-4d26-a621-22a0a2406878" />
 
-## 📸 Screenshots
-![alt text](project1net.png)
+## Features
 
-## ⚙️ How to Run
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/Irfan23-iT/net-track-inventory.git](https://github.com/Irfan23-iT/net-track-inventory.git)
-    ```
-2.  **Configure Database:**
-    * Create a MySQL database named `nettrack_db`.
-    * Update `application.properties` with your MySQL credentials.
-3.  **Run the App:**
-    ```bash
-    ./mvnw spring-boot:run
-    ```
-4.  **Access Dashboard:**
-    * URL: `http://localhost:8080`
-    * Default User: `admin` / `password123`
+* **Inventory Management:** Full CRUD (Create, Read, Update, Delete) capabilities for network assets.
+* **Network Status Monitoring:** Built-in ping functionality to actively check and update the connectivity status of devices via their IP addresses.
+* **Data Persistence:** Relational database integration using Spring Data JPA and MySQL.
+* **Secure Access:** Form-based authentication via Spring Security to restrict dashboard access to authorized users.
+* **Responsive UI:** Server-side rendered views built with Thymeleaf and Bootstrap 5 for a clean, accessible interface.
 
-## 👨‍💻 Author
-**Mohamad Irfan Danish Bin Azani** - *Aspiring Software Engineer & Network Admin*
+## Technology Stack
+
+* **Backend:** Java, Spring Boot 3, Spring MVC, Spring Security
+* **Data Access:** Spring Data JPA, Hibernate
+* **Database:** MySQL
+* **Frontend:** HTML5, CSS3, Thymeleaf, Bootstrap 5
+* **Build Tool:** Maven
+
+## Prerequisites
+
+To run this project locally, ensure you have the following installed:
+* Java Development Kit (JDK) 17 or higher
+* MySQL Server (or XAMPP)
+* Maven (included via wrapper)
+
+## Installation and Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/Irfan23-iT/net-track-inventory.git](https://github.com/Irfan23-iT/net-track-inventory.git)
+   cd net-track-inventory
