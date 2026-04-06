@@ -6,9 +6,6 @@ NetTrack is a full-stack Java web application designed for IT administrators to 
 
 This system allows users to maintain a database of IT equipment (routers, switches, laptops, servers) and includes a network-integrated status check feature. Instead of relying purely on manual status updates, the application can execute ICMP pings against device IP addresses to verify if hardware is actively online.
 
-## Screenshot
-<img width="1915" height="717" alt="project1net" src="https://github.com/user-attachments/assets/34a56ffe-379f-4d26-a621-22a0a2406878" />
-
 ## Features
 
 * **Inventory Management:** Full CRUD (Create, Read, Update, Delete) capabilities for network assets.
@@ -16,6 +13,9 @@ This system allows users to maintain a database of IT equipment (routers, switch
 * **Data Persistence:** Relational database integration using Spring Data JPA and MySQL.
 * **Secure Access:** Form-based authentication via Spring Security to restrict dashboard access to authorized users.
 * **Responsive UI:** Server-side rendered views built with Thymeleaf and Bootstrap 5 for a clean, accessible interface.
+  
+## Screenshot
+<img width="1915" height="717" alt="project1net" src="https://github.com/user-attachments/assets/34a56ffe-379f-4d26-a621-22a0a2406878" />
 
 ## Technology Stack
 
@@ -38,3 +38,42 @@ To run this project locally, ensure you have the following installed:
    ```bash
    git clone [https://github.com/Irfan23-iT/net-track-inventory.git](https://github.com/Irfan23-iT/net-track-inventory.git)
    cd net-track-inventory
+Database Configuration
+
+Start your MySQL server.
+
+Create a new database named nettrack_db.
+
+SQL
+CREATE DATABASE nettrack_db;
+The application is configured to automatically generate the required database tables upon startup.
+
+Application Properties
+
+If your MySQL root user has a password, update the src/main/resources/application.properties file:
+
+Properties
+spring.datasource.username=root
+spring.datasource.password=your_password_here
+Run the Application
+
+Execute the following command in your terminal:
+
+Bash
+./mvnw spring-boot:run
+(On Windows, you may need to use mvnw spring-boot:run)
+
+Usage
+Once the application has started successfully, access the dashboard via your web browser:
+
+URL: http://localhost:8080
+
+Default Username: admin
+
+Default Password: password123
+
+From the dashboard, you can add new assets, input their IP addresses, and use the "Ping" action to verify their network status.
+
+Author
+Mohamad Irfan Danish Bin Azani
+
